@@ -39,8 +39,13 @@ img,video{max-width:100%;display:block}
 /* header */
 .top{display:flex;align-items:center;justify-content:space-between;gap:20px;height:84px;padding-inline:20px;position:sticky;top:0;z-index:10;background:rgba(253,251,248,.9);backdrop-filter:blur(10px)}
 @media(min-width:900px){.top{padding-inline:80px}}
-.logo{display:flex;align-items:center;gap:12px;font-family:var(--display);font-weight:900;font-size:22px}
-.logo-dots{width:34px;height:34px;border-radius:50%;background:var(--accent);box-shadow:14px 0 0 0 var(--lav);margin-right:14px}
+.logo{display:flex;align-items:center;font-family:var(--display);font-weight:900;font-size:22px;letter-spacing:-.02em}
+/* три варианта логотипа; какой показать, решает data-logo на <html> (скрипт в head) */
+.logo-v{display:none;align-items:center;gap:10px;white-space:nowrap}
+:root:not([data-logo]) .logo-v1,[data-logo="1"] .logo-v1,[data-logo="2"] .logo-v2,[data-logo="3"] .logo-v3{display:inline-flex}
+.logo-v em{font-style:normal;color:var(--accent)}
+.logo-sun{flex:none}
+.logo-pill{display:inline-block;background:var(--accent);color:#fff;border-radius:999px;padding:.05em .45em .15em;margin-left:.25em;line-height:1.1}
 .nav{display:none;gap:32px;font-size:15px;font-weight:500}
 .nav a:hover{color:var(--accent)}
 @media(min-width:1100px){.nav{display:flex}}
@@ -146,6 +151,6 @@ h1 em{font-style:normal;color:var(--accent)}
 
 /* footer */
 .foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;padding-block:32px;font-size:14px;color:var(--muted2)}
-.foot-logo{font-family:var(--display);font-weight:900;font-size:18px;color:var(--ink)}
+.foot-logo{font-family:var(--display);font-weight:900;font-size:18px;color:var(--ink);letter-spacing:-.02em}
 
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
