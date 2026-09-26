@@ -29,3 +29,14 @@ python3 -m http.server 8080
 ## Источники данных
 
 Адрес, телефон, рейтинг, цены и отзывы — с Яндекс Карт (карточка организации 146447912907) и из Telegram-канала @yogatut58, сентябрь 2026. Прайс массажа — из фото прайса студии.
+
+## Репозитории и деплой
+
+- `origin` → https://github.com/ProoFerok/yogatut58-dev — разработка (приватный).
+- `prod` → https://github.com/ProoFerok/yogatut58 — продакшен (публичный).
+- Прод публикуется автоматически на https://prooferok.github.io/yogatut58/ при пуше в `main` прод-репозитория (workflow `.github/workflows/pages.yml`, в dev-репозитории он пропускается).
+
+```
+git push origin main   # в разработку
+git push prod main     # в продакшен → GitHub Pages
+```
