@@ -34,7 +34,7 @@ python3 -m http.server 8080
 
 - `origin` → https://github.com/ProoFerok/yogatut58-dev — разработка (приватный).
 - `prod` → https://github.com/ProoFerok/yogatut58 — продакшен (публичный).
-- Прод публикуется автоматически на https://prooferok.github.io/yogatut58/ при пуше в `main` прод-репозитория (workflow `.github/workflows/pages.yml`, в dev-репозитории он пропускается).
+- Домен: https://yogatut58.ru (файл `CNAME`, DNS на reg.ru → GitHub Pages). Прод публикуется автоматически при пуше в `main` прод-репозитория (workflow `.github/workflows/pages.yml`, в dev-репозитории он пропускается).
 
 ```
 git push origin main   # в разработку
