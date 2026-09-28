@@ -77,7 +77,7 @@ h1 em{font-style:normal;color:var(--accent)}
 @media(min-width:900px){.elena{grid-template-columns:4fr 7fr;gap:64px;padding:64px}}
 .elena h2,.elena h3{color:var(--paper)}
 .elena-side{display:flex;flex-direction:column;gap:16px}
-.monogram{width:clamp(120px,15vw,220px);aspect-ratio:1;border-radius:50%;background:var(--lav);display:grid;place-items:center;font-family:var(--display);font-weight:900;font-size:clamp(56px,7vw,96px);color:var(--ink)}
+.portrait{width:clamp(120px,15vw,220px);height:auto;aspect-ratio:1;border-radius:50%;object-fit:cover;display:block;background:var(--lav);box-shadow:0 0 0 4px var(--lav),0 12px 32px rgba(0,0,0,.35)}
 .muted-lav{color:var(--lav);font-size:15px}
 .elena-body{display:flex;flex-direction:column;gap:24px;align-items:flex-start}
 .elena-body>p{color:#D9D2E6;font-size:17px;line-height:1.6}
