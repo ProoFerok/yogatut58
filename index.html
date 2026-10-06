@@ -77,8 +77,8 @@ ym(113128505,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webv
   </div>
   <div class="hero-media">
     <video id="heroVideo" poster="assets/hero-poster.jpg" muted loop playsinline preload="auto" aria-label="Видео: солнце в окнах студии и растения"></video>
-    <!-- видео по времени посетителя: с 7 до 19 дневное, вечером и ночью закат; src ставим сразу, чтобы браузер не качал оба файла -->
-    <script>(function(){var h=new Date().getHours(),x=h>=7&&h<19?['hero','Видео: солнце в окнах студии и растения']:['hero-2','Видео: закат за окном студии, девушка открывает окно'],v=document.getElementById('heroVideo');v.poster='assets/'+x[0]+'-poster.jpg';v.setAttribute('aria-label',x[1]);v.src='assets/'+x[0]+'.mp4'})();</script>
+    <!-- видео по московскому времени (UTC+3): с 7 до 19 дневное, вечером и ночью закат; src ставим сразу, чтобы браузер не качал оба файла -->
+    <script>(function(){var h=(new Date().getUTCHours()+3)%24,x=h>=7&&h<19?['hero','Видео: солнце в окнах студии и растения']:['hero-2','Видео: закат за окном студии, девушка открывает окно'],v=document.getElementById('heroVideo');v.poster='assets/'+x[0]+'-poster.jpg';v.setAttribute('aria-label',x[1]);v.src='assets/'+x[0]+'.mp4'})();</script>
     <div class="tags"><span class="tag tag-accent">психолог</span><span class="tag tag-lav">йога</span><span class="tag tag-paper">массаж</span></div>
     <span class="addr">ЖК «Новелла» · Шмидта, 24</span>
   </div>
