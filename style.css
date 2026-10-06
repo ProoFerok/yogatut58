@@ -37,7 +37,11 @@ img,video{max-width:100%;display:block}
 @media(max-width:640px){.hide-sm{display:none}.show-sm{display:inline}}
 
 /* header */
-.top{display:flex;align-items:center;justify-content:space-between;gap:20px;height:84px;padding-inline:20px;position:sticky;top:0;z-index:10;background:rgba(253,251,248,.9);backdrop-filter:blur(10px)}
+.top{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:20px;height:84px;padding-inline:20px;position:sticky;top:0;z-index:10;background:rgba(253,251,248,.9);backdrop-filter:blur(10px)}
+/* меню всегда по центру, ширина логотипа (их три варианта) его не двигает */
+.top>.logo{grid-column:1;justify-self:start}
+.top>.nav{grid-column:2}
+.top>.btn{grid-column:3;justify-self:end}
 @media(min-width:900px){.top{padding-inline:80px}}
 .logo{display:flex;align-items:center;font-family:var(--display);font-weight:900;font-size:22px;letter-spacing:-.02em}
 /* три варианта логотипа; какой показать, решает data-logo на <html> (скрипт в head) */
