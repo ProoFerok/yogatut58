@@ -76,7 +76,9 @@ ym(113128505,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webv
     </div>
   </div>
   <div class="hero-media">
-    <video id="heroVideo" src="assets/hero.mp4" poster="assets/hero-poster.jpg" muted loop playsinline preload="auto" aria-label="Видео: солнце в окнах студии и растения"></video>
+    <video id="heroVideo" poster="assets/hero-poster.jpg" muted loop playsinline preload="auto" aria-label="Видео: солнце в окнах студии и растения"></video>
+    <!-- случайное видео при каждой загрузке; src ставим сразу, чтобы браузер не качал оба файла -->
+    <script>(function(){var l=[['hero','Видео: солнце в окнах студии и растения'],['hero-2','Видео: закат за окном студии, девушка открывает окно']],x=l[Math.floor(Math.random()*l.length)],v=document.getElementById('heroVideo');v.poster='assets/'+x[0]+'-poster.jpg';v.setAttribute('aria-label',x[1]);v.src='assets/'+x[0]+'.mp4'})();</script>
     <div class="tags"><span class="tag tag-accent">психолог</span><span class="tag tag-lav">йога</span><span class="tag tag-paper">массаж</span></div>
     <span class="addr">ЖК «Новелла» · Шмидта, 24</span>
   </div>
