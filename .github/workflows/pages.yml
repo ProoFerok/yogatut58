@@ -48,8 +48,12 @@ jobs:
     steps:
       - name: Ping IndexNow (Yandex)
         run: |
+          # пока GitHub не выпустил сертификат для домена, Яндекс не может скачать ключ по https
+          # и отвечает 403 Invalid key — тогда отдаём ключ и адрес по http
+          if curl -sSf -o /dev/null "https://yogatut58.ru/$INDEXNOW_KEY.txt"; then s=https; else s=http; fi
+          echo "scheme: $s"
           code=$(curl -sS -o /tmp/resp.txt -w '%{http_code}' -X POST 'https://yandex.com/indexnow' \
             -H 'Content-Type: application/json; charset=utf-8' \
-            -d "{\"host\":\"yogatut58.ru\",\"key\":\"$INDEXNOW_KEY\",\"keyLocation\":\"https://yogatut58.ru/$INDEXNOW_KEY.txt\",\"urlList\":[\"https://yogatut58.ru/\"]}")
+            -d "{\"host\":\"yogatut58.ru\",\"key\":\"$INDEXNOW_KEY\",\"keyLocation\":\"$s://yogatut58.ru/$INDEXNOW_KEY.txt\",\"urlList\":[\"$s://yogatut58.ru/\"]}")
           echo "HTTP $code"; cat /tmp/resp.txt; echo
           case "$code" in 200|202) ;; *) exit 1 ;; esac
